@@ -5,12 +5,8 @@ FXArcade::FXArcade()
 		arcadeLights(*this),
 		buttonListeners{nullptr}
 {
-	pinMode(PIN_ADDR_A1, OUTPUT);
-	pinMode(PIN_ADDR_A0, OUTPUT);
-	pinMode(PIN_ENABLE, OUTPUT);
 	pinMode(PIN_POT_IN, INPUT);
 	pinMode(PIN_SYNC_IN, INPUT);
-	digitalWrite(PIN_ENABLE, HIGH);
 }
 
 void FXArcade::init()

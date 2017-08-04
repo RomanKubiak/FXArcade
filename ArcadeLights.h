@@ -11,8 +11,8 @@ class ArcadeLight
 		ArcadeLight(int _pin, bool _state, bool _invertedLogic=false) 
 			: 	pin(_pin), 
 				state(_state), 
-				blinkInterval(150),
-				invertedLogic(_invertedLogic)
+				invertedLogic(_invertedLogic),
+				blinkInterval(150)
 		{
 			pinMode(pin, OUTPUT);
 			setState(state);
@@ -33,9 +33,9 @@ class ArcadeLight
 
 	private:
 		int pin;
-		int blinkInterval;
 		bool state;
 		bool invertedLogic;
+		int blinkInterval;
 };
 
 static ArcadeLight red1Led(PIN_LED_RED1, false);

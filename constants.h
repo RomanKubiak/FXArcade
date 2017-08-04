@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <PinButton.h>
 
+// MIDI
+#define MIDI_CLOCKS_PER_SECOND	24
 // PINS
 #define PIN_BTN_RED1	8
 #define PIN_BTN_RED2	7

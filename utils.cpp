@@ -17,6 +17,8 @@ extern "C"
     	if(c == '\n')
        		Serial.write('\r'); 
    		Serial.write(c); 
+
+   		return (1);
  	}
 }
 

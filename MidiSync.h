@@ -1,38 +1,27 @@
 #ifndef MIDI_SYNC_H
 #define MIDI_SYNC_H
 
-#include <SoftwareSerial.h>
-#include <MIDI.h>
 #include "constants.h"
 
-SoftwareSerial midiSerial(PIN_MIDI_IN, A2);
-MIDI_CREATE_INSTANCE(SoftwareSerial, midiSerial, MIDI);
+class FXArcade;
+
+enum MidiMachineState
+{
+	Stopped,
+	Started,
+	Running,
+};
 
 class MidiSync
 {
 	public:
-    MidiSync()
-    {
-      midiSerial.begin(31250);
-      MIDI.begin(0);
-    }
+    MidiSync(FXArcade &_owner);
+		void update();
 
-		void update()
-		{
-  	}
-
-    void debugMidi()
-    {
-      if (MIDI.read())
-      {
-        Serial.print(millis());Serial.print(": ");
-        Serial.print((const byte)MIDI.getType() + MIDI.getChannel(), HEX);
-        Serial.print(":");
-        Serial.print(MIDI.getData1(), HEX);
-        Serial.print(":");
-        Serial.println(MIDI.getData2(), HEX);
-      }
-    }
+  private:
+    FXArcade &owner;
+    MidiMachineState currentState;
+    uint16_t clockCount;
 };
 
 #endif

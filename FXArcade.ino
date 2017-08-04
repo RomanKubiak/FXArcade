@@ -1,7 +1,7 @@
 #include "FXArcade.h"
 #include <Timer.h>
 
-static const FXArcade fxArcade;
+static FXArcade fxArcade;
 
 void setup()
 {

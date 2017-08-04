@@ -1,7 +1,7 @@
 #include "ArcadeButtons.h"
 #include "FXArcade.h"
 
-const PinButton *buttons[ARCADE_BUTTONS]
+PinButton *buttons[ARCADE_BUTTONS]
 {
 	&red1Btn, &red2Btn, &grn1Btn, &grn2Btn, &ylwBtn, &encBtn
 };

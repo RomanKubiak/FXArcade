@@ -2,7 +2,7 @@
 #include "FXArcade.h"
 
 
-const ArcadeLight *lights[ARCADE_LIGHTS]
+ArcadeLight *lights[ARCADE_LIGHTS]
 {
 	&red1Led, &red2Led, &grn1Led, &grn2Led, &ylwLed, &encRed, &encGrn
 };
